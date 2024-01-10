@@ -29,7 +29,6 @@ public class MouseHandler implements MouseListener, MouseMotionListener {
     @Override
     public void mousePressed(MouseEvent e) {
         //Créer cercle
-        //System.out.println("Pressed");
         x1 = e.getX();
         y1 = e.getY();
 
@@ -37,10 +36,6 @@ public class MouseHandler implements MouseListener, MouseMotionListener {
         if(e.getButton() == MouseEvent.BUTTON1) {
             if (e.isShiftDown()) {
                 actualCercle = caneva.getActualCercle(x1, y1);
-                /*
-                if (actualCercle == null) {
-                    return;
-                }*/
 
             } else {
                 actualCercle = new Cercle(x1, y1, 0);
@@ -52,7 +47,6 @@ public class MouseHandler implements MouseListener, MouseMotionListener {
     @Override
     public void mouseReleased(MouseEvent e) {
         //Ajouter cercle à liste
-        //System.out.println("mouseReleased");
         if(isNewCercle){
             caneva.addCercle(actualCercle);
         } else if (e.getButton() == MouseEvent.BUTTON3) {
@@ -61,23 +55,21 @@ public class MouseHandler implements MouseListener, MouseMotionListener {
                 actualCercle.erase(caneva.getPanelGraphic());
             }
         }
-        System.out.println("" + e.getButton());
         resetAll();
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        //System.out.println("enter");
+
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        //System.out.println("exit");
+
     }
 
     @Override
     public void mouseDragged(MouseEvent e) {
-        //System.out.println("dragged");
 
         if (actualCercle != null) {
             x2 = e.getX();
@@ -96,8 +88,7 @@ public class MouseHandler implements MouseListener, MouseMotionListener {
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        //x2 = e.getX();
-        //y2 = e.getY();
+
     }
 
     private int getRadius() {
